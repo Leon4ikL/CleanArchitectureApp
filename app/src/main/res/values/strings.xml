@@ -4,4 +4,7 @@
     <string name="get_data">Get Data</string>
     <string name="put_data">Put data here</string>
     <string name="set_data">Save Data</string>
+
+    <string name="save_result_massage">Save result = %1$s</string>
+    <string name="get_result_massage">%1$s %2$s</string>
 </resources>
