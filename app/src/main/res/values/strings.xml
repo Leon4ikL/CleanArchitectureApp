@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Clean Architecture App</string>
+    <string name="no_data">No data</string>
+    <string name="get_data">Get Data</string>
+    <string name="put_data">Put data here</string>
+    <string name="set_data">Save Data</string>
 </resources>
