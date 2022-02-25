@@ -6,16 +6,19 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.cleanarchitectureapp.R
+import com.example.cleanarchitectureapp.data.repository.UserRepositoryImpl
 import com.example.cleanarchitectureapp.domain.models.SaveUserNameParam
 import com.example.cleanarchitectureapp.domain.models.UserName
+import com.example.cleanarchitectureapp.domain.repository.UserRepository
 import com.example.cleanarchitectureapp.domain.usecase.GetUserNameUseCase
 import com.example.cleanarchitectureapp.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
     //Инициализация Use Case`ов
     //TODO (заменить на Dagger)
-    private val getUserNameUseCase = GetUserNameUseCase()
-    private val saveUserNameUseCase = SaveUserNameUseCase()
+    private val userRepository by lazy { UserRepositoryImpl(context = applicationContext) }
+    private val getUserNameUseCase by lazy { GetUserNameUseCase(userRepository) }
+    private val saveUserNameUseCase by lazy { SaveUserNameUseCase(userRepository) }
 
     //Инициализация view элементов
     private val dataTextView by lazy { findViewById<TextView>(R.id.dataText) }

@@ -4,6 +4,6 @@ import com.example.cleanarchitectureapp.domain.models.SaveUserNameParam
 import com.example.cleanarchitectureapp.domain.models.UserName
 
 interface UserRepository {
-    fun saveName(saveParam: SaveUserNameParam)
+    fun saveName(saveParam: SaveUserNameParam): Boolean
     fun getName(): UserName
 }
